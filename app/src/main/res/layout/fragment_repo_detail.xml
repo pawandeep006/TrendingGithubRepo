@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.pawan.trendinggithubrepo.source.network.model.Item" />
+
+        <variable
+            name="item"
+            type="Item" />
+
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="5dp">
+
+        <TextView
+            android:id="@+id/fullName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:text="@{item.fullName}"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="full name" />
+
+        <TextView
+            android:id="@+id/link"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:text="@{item.htmlUrl}"
+            android:textColor="@color/teal_200"
+            app:layout_constraintLeft_toLeftOf="@id/fullName"
+            app:layout_constraintTop_toBottomOf="@id/fullName"
+            tools:text="htmlUrl" />
+
+        <CheckBox
+            android:id="@+id/type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:checked="@{item.private}"
+            android:enabled="false"
+            android:text="Private"
+            app:layout_constraintLeft_toLeftOf="@id/link"
+            app:layout_constraintTop_toBottomOf="@id/link"
+            tools:text="Private" />
+
+        <TextView
+            android:id="@+id/description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:layout_marginBottom="10dp"
+            android:text="@{item.description}"
+            app:layout_constraintLeft_toLeftOf="@id/type"
+            app:layout_constraintTop_toBottomOf="@id/type"
+            tools:text="description" />
+
+        <TextView
+            android:id="@+id/stargazersCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:text="@{`Stargazers Count : `+item.stargazersCount}"
+            app:layout_constraintLeft_toLeftOf="@id/description"
+            app:layout_constraintTop_toBottomOf="@id/description"
+            tools:text="stargazersCount" />
+
+        <TextView
+            android:id="@+id/watchersCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:text="@{`Watchers Count : `+item.watchersCount}"
+            app:layout_constraintLeft_toLeftOf="@id/stargazersCount"
+            app:layout_constraintTop_toBottomOf="@id/stargazersCount"
+            tools:text="watchersCount" />
+
+        <TextView
+            android:id="@+id/forksCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:text="@{`Forks Count : `+item.forksCount}"
+            app:layout_constraintLeft_toLeftOf="@id/watchersCount"
+            app:layout_constraintTop_toBottomOf="@id/watchersCount"
+            tools:text="forksCount" />
+
+        <TextView
+            android:id="@+id/openIssuesCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:text="@{`Open Issues Count : `+item.openIssuesCount}"
+            app:layout_constraintLeft_toLeftOf="@id/forksCount"
+            app:layout_constraintTop_toBottomOf="@id/forksCount"
+            tools:text="openIssuesCount" />
+
+        <TextView
+            android:id="@+id/size"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:text="@{`Repo size : `+Long.toString(item.getSizeInKb()) + `KB`}"
+            app:layout_constraintLeft_toLeftOf="@id/openIssuesCount"
+            app:layout_constraintTop_toBottomOf="@id/openIssuesCount"
+            tools:text="Repo size is 100 KB" />
+
+        <CheckBox
+            android:id="@+id/hasWiki"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:checked="@{item.hasWiki}"
+            android:enabled="false"
+            android:text="Wiki Pages Available"
+            app:layout_constraintLeft_toLeftOf="@id/size"
+            app:layout_constraintTop_toBottomOf="@id/size"
+            tools:text="Wiki Pages Available" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
