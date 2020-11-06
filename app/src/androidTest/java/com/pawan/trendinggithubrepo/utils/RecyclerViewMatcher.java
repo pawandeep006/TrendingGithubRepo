@@ -1,4 +1,4 @@
-package com.pawan.trendinggithubrepo.view.activity;
+package com.pawan.trendinggithubrepo.utils;
 
 import android.content.res.Resources;
 import android.view.View;

@@ -11,7 +11,6 @@
             name="item"
             type="Item" />
 
-
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -27,8 +26,8 @@
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
             android:text="@{item.fullName}"
-            android:textColor="@color/black"
             android:textSize="20sp"
+            android:textStyle="bold"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="full name" />
@@ -60,9 +59,9 @@
             android:id="@+id/description"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="16sp"
             android:layout_marginBottom="10dp"
             android:text="@{item.description}"
+            android:textSize="16sp"
             app:layout_constraintLeft_toLeftOf="@id/type"
             app:layout_constraintTop_toBottomOf="@id/type"
             tools:text="description" />

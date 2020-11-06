@@ -300,5 +300,5 @@ data class Item(
     @Expose
     var score: Double? = null
 ) {
-    fun getSizeInKb() = size?.div(1024)
+    fun getSizeInKb() = size/*?.div(1024)*/
 }
